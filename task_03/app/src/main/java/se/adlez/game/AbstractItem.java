@@ -1,0 +1,23 @@
+package se.adlez.game;
+
+public class AbstractItem implements Item {
+    private String description;
+    private String graphic;
+
+    public AbstractItem(String description, String graphic){
+
+    }
+
+    public String getDescription(){
+        return description;
+    }
+
+    public String getGraphic(){
+        return graphic;
+    }
+
+    @Override
+    public String toString(){
+        return "";
+    }
+}

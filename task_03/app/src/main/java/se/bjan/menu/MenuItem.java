@@ -3,6 +3,7 @@ package se.bjan.menu;
 public abstract class MenuItem {
     private String title;
     private String symbol;
+    protected GameManager manager;
 
     abstract void run();
 
@@ -17,5 +18,9 @@ public abstract class MenuItem {
 
     public String getTitle(){
         return title;
+    }
+
+    public void addManager(GameManager manager){
+        this.manager = manager;
     }
 }

@@ -1,13 +1,12 @@
 package se.bjan.menu;
 
 import java.util.ArrayList;
-import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
 public class Menu {
     private Scanner scanner = new Scanner(System.in);
-    private ArrayList<MenuItem> options = new ArrayList<MenuItem>();
+    private ArrayList<MenuItem> menuItems = new ArrayList<MenuItem>();
 
     public Menu(){
 
@@ -19,10 +18,10 @@ public class Menu {
             printMenu();
             choice = getChoice().toLowerCase();
             System.out.println("You enterered: " + choice);
-            for (MenuItem option: options) {
-                if (choice.equals(option.getSymbol())) {
+            for (MenuItem item: menuItems) {
+                if (choice.equals(item.getSymbol())) {
                     try{
-                        option.run();
+                        item.run();
                     }
                     catch (IndexOutOfBoundsException e){
                         
@@ -35,7 +34,7 @@ public class Menu {
     }
 
     public void addMenuItem(MenuItem item){
-        options.add(item);
+        menuItems.add(item);
     }
 
     public String getChoice(){
@@ -47,8 +46,8 @@ public class Menu {
 
     public void printMenu(){
         makeDashes(20);
-        for(MenuItem option: options) {
-            System.out.println("|" + option.getSymbol() +  ") " + option.getTitle());
+        for(MenuItem item: menuItems) {
+            System.out.println("|" + item.getSymbol() +  ") " + item.getTitle());
         }
         makeDashes(20);
     }
@@ -61,4 +60,7 @@ public class Menu {
         System.out.println(dashes);
     }
 
+    public ArrayList<MenuItem> getMenuItems(){
+        return menuItems;
+    }
 }

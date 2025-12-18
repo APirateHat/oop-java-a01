@@ -3,13 +3,22 @@
  */
 package org.example;
 
+import java.util.ArrayList;
 import se.bjan.menu.*;
 
 public class App {
 
     public static void main(String[] args) {
         Menu menu = new Menu();
+        GameManager gameManager = new GameManager();
         menu.addMenuItem(new TestClass("Test", "a"));
+        menu.addMenuItem(new CreateEmptyForest("Create an empty forest", "1"));
+        menu.addMenuItem(new PrintForest("Print forest", "2"));
+        menu.addMenuItem(new Quit("Quit", "q"));
+        ArrayList<MenuItem> items = menu.getMenuItems();
+        for(MenuItem item: items){
+            item.addManager(gameManager);
+        }
         menu.run();
     }
 }

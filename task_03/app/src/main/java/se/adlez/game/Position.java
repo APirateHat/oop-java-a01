@@ -29,17 +29,22 @@ public class Position {
         this.y = y;
     }
 
+    @Override
     public boolean equals(Object o){
-        return false;
+        Position pos = (Position) o;
+        return x == pos.x && y == pos.y;
     }
 
+    @Override
     public int hashCode(){
-        return 0;
+        return 31 * x + y;
     }
 
     @Override
     public String toString(){
-        return "";
+        String x = String.valueOf(getX());
+        String y = String.valueOf(getY());
+        return "("+x+", "+y+")";
     }
 
     public void move(Position relative){

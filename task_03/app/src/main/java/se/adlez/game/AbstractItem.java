@@ -5,7 +5,8 @@ public class AbstractItem implements Item {
     private String graphic;
 
     public AbstractItem(String description, String graphic){
-
+        this.description = description;
+        this.graphic = graphic;
     }
 
     public String getDescription(){
@@ -18,6 +19,6 @@ public class AbstractItem implements Item {
 
     @Override
     public String toString(){
-        return "";
+        return getDescription() + " " + getGraphic();
     }
 }

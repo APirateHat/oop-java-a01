@@ -18,37 +18,51 @@ public class Forest {
     }
 
     public void init(){
-        for(int x = 0; x < WIDTH; x++){
-            for(int y = 0; y < HEIGHT; y++){
-                items.put(new Position(x, y), new FirTree());
-            }
-        }
+        items.clear();
     }
 
     public String getGamePlan(){
-        // String plan = "";
-        //  for(int x = 0; x < WIDTH; x++){
-        //     for(int y = 0; y < HEIGHT; y++){
-        //         plan += String.valueOf(x) + String.valueOf(y);
-        //     }
-        //     plan += "\n";
-        // }
-        // return plan;
+        String plan = "";
 
-        //ArrayList<> test = items.keySet();
-        for(Position k: items.keySet()){
-            System.out.println(items.get(k).getGraphic());
+        for(int x = 0; x < WIDTH; x++){
+            for(int y = 0; y < HEIGHT; y++){
+                Position pos = new Position(x, y);
+                if (items.containsKey(pos)) {
+                    plan += items.get(pos).getGraphic();
+                    System.out.println(pos);
+                }
+                else{
+                    plan += "🟩";
+                }
+            }
+            plan += "\n";
         }
-        //System.out.println(test);
-        return "";
+        // int count = 0;
+        // Position newPos = new Position(0,0);
+        // items.remove("00");
+        // addItem(new Rock(), new Position(0, 0));
+        // for(Position k: items.keySet()){
+        //     plan += items.get(k).getGraphic();
+        //     count += 1;
+        //     System.out.println(count);
+        //     if (count >= WIDTH){
+        //         count = 0;
+        //         plan += "\n";
+        //     }
+        // }
+        return plan;
     }
 
     public void addItem(Item item, Position position){
-
+        items.put(position, item);
     }
 
     public String listItems(){
-        return "";
+        String item = "";
+        for(Position k: items.keySet()){
+            item += k + " " + items.get(k) + "\n";
+        }
+        return item;
     }
 
     public boolean tryAddItem(Item item, Position position){

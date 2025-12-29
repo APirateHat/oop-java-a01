@@ -48,7 +48,8 @@ public class Position {
     }
 
     public void move(Position relative){
-
+        this.x += relative.getX();
+        this.y += relative.getY();
     }
 }
 

@@ -11,7 +11,7 @@ public class Forest {
     AbstractMoveableItem hunter;
     AbstractMoveableItem home;
     boolean gameOver;
-    StringBuilder status;
+    StringBuilder status = new StringBuilder();
 
     public Forest(){
 
@@ -24,12 +24,11 @@ public class Forest {
     public String getGamePlan(){
         String plan = "";
 
-        for(int x = 0; x < WIDTH; x++){
-            for(int y = 0; y < HEIGHT; y++){
+        for(int y = 0; y < HEIGHT; y++){
+            for(int x = 0; x < WIDTH; x++){
                 Position pos = new Position(x, y);
                 if (items.containsKey(pos)) {
                     plan += items.get(pos).getGraphic();
-                    System.out.println(pos);
                 }
                 else{
                     plan += "🟩";
@@ -37,19 +36,6 @@ public class Forest {
             }
             plan += "\n";
         }
-        // int count = 0;
-        // Position newPos = new Position(0,0);
-        // items.remove("00");
-        // addItem(new Rock(), new Position(0, 0));
-        // for(Position k: items.keySet()){
-        //     plan += items.get(k).getGraphic();
-        //     count += 1;
-        //     System.out.println(count);
-        //     if (count >= WIDTH){
-        //         count = 0;
-        //         plan += "\n";
-        //     }
-        // }
         return plan;
     }
 
@@ -66,24 +52,50 @@ public class Forest {
     }
 
     public boolean tryAddItem(Item item, Position position){
-
-        return false;
+        if(items.containsKey(position)){
+            return false;
+        }
+        else{
+            items.put(position, item);
+            return true;
+        }
     }
 
     public void addPlayerItem(AbstractMoveableItem player){
-
+        this.player = player;
+        addItem(player, player.getPosition());
     }
 
     public void addHunterItem(AbstractMoveableItem hunter){
-
+        this.hunter = hunter;
+        addItem(hunter, hunter.getPosition());
     }
 
     public void addHomeItem(AbstractMoveableItem home){
-
+        this.home = home;
+        addItem(home, home.getPosition());
     }
 
     public void movePlayer(Position relative){
-
+        int x = player.getPosition().getX() + relative.getX();
+        int y = player.getPosition().getY() + relative.getY();
+        System.out.println(items.get(new Position(x, y)));
+        Item item = items.get(new Position(x, y));
+        if((x != -1 && x < WIDTH) && (y != -1 && y < HEIGHT)){
+            if(item == null || home.getPosition().getX() == x && home.getPosition().getY() == y){
+                items.remove(player.getPosition());
+                this.player = new Robot(new Position(x, y));
+                addItem(player, new Position(x, y));
+                this.status.append("You move swiftly!\n");
+            }
+            else{
+                this.status.append("Something is in the way, you can't move!\n");
+            }
+        }
+        else{
+            this.status.append("Can't move out of bounds!\n");
+        }
+        System.out.println(getStatus());
     }
 
     public boolean isGameOver(){
@@ -91,7 +103,7 @@ public class Forest {
     }
 
     public String getStatus(){
-        return "";
+        return status.toString();
     }
 
 }

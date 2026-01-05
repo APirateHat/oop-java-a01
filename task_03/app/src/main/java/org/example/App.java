@@ -17,6 +17,8 @@ public class App {
         menu.addMenuItem(new ListItems("List all items in the forest", "4"));
         menu.addMenuItem(new AddTreesAndRocks("Add 5🌲 and 5 🪨", "5"));
         menu.addMenuItem(new AddPlayerHunterHome("Add Player, Hunter and Home", "6"));
+        menu.addMenuItem(new SaveGame("💾Save Game To File", "s"));
+        menu.addMenuItem(new LoadGame("🖼️Load Game From File", "a"));
         menu.addMenuItem(new PlayGame("▶️Play Game", "p"));
         menu.addMenuItem(new Quit("❌ Quit", "q"));
         ArrayList<MenuItem> items = menu.getMenuItems();

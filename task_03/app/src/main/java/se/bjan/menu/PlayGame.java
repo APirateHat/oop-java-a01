@@ -32,7 +32,9 @@ public class PlayGame extends MenuItem {
                 case "s":
                     forest.movePlayer(new Position(0, 1));
                     break;
-
+            }
+            if(forest.isGameOver() == true){
+                break;
             }
         }
         while(!choice.equals("q"));

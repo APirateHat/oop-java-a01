@@ -10,7 +10,7 @@ public class CreateEmptyForest extends MenuItem{
     
     public void run(){
         Forest forest = new Forest();
-        System.out.println(forest);
+        System.out.println("New forest created!");
         manager.addForest(forest);
         forest.init();
     }

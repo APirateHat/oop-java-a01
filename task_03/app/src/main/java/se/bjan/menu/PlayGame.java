@@ -33,6 +33,7 @@ public class PlayGame extends MenuItem {
                     forest.movePlayer(new Position(0, 1));
                     break;
             }
+            System.out.println(forest.getStatus());
             if(forest.isGameOver() == true){
                 System.out.println(forest.getGamePlan());
                 break;

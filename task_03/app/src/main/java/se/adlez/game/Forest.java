@@ -125,7 +125,7 @@ public class Forest implements Serializable{
         if(!gameOver){
             moveHunter();
         }
-        System.out.println(getStatus());
+        //System.out.println(getStatus());
     }
 
     public void moveHunter(){

@@ -23,8 +23,8 @@ public class Menu {
                     try{
                         item.run();
                     }
-                    catch (IndexOutOfBoundsException e){
-                        
+                    catch (NullPointerException e){
+                        System.out.println("⚠️ACTION FAILED: You must first create a forest!");
                     }
                 }
             }

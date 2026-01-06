@@ -19,6 +19,8 @@ public class App {
         menu.addMenuItem(new AddPlayerHunterHome("Add Player, Hunter and Home", "6"));
         menu.addMenuItem(new SaveGame("💾Save Game To File", "s"));
         menu.addMenuItem(new LoadGame("🖼️Load Game From File", "a"));
+        menu.addMenuItem(new PrintAsJson("Print Game As JSON", "j"));
+        menu.addMenuItem(new SaveAsJson("Save Game As JSON", "o"));
         menu.addMenuItem(new PlayGame("▶️Play Game", "p"));
         menu.addMenuItem(new Quit("❌ Quit", "q"));
         ArrayList<MenuItem> items = menu.getMenuItems();

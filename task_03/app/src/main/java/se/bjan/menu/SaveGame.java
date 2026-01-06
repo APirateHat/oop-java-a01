@@ -9,5 +9,7 @@ public class SaveGame extends MenuItem {
 
     public void run(){
         Forest forest = manager.getForest();
+        ForestToFile.save(forest, "forest.ser");
+        System.out.println("Game Saved!💾");
     }
 }

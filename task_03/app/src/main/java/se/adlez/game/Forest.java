@@ -1,10 +1,11 @@
 package se.adlez.game;
 
+import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-public class Forest {
+public class Forest implements Serializable{
     private int WIDTH = 10;
     private int HEIGHT = 10;
     private Map <Position, Item> items = new HashMap<>();

@@ -8,6 +8,8 @@ public class LoadGame extends MenuItem {
     }
 
     public void run(){
-
+        Forest forest = ForestToFile.load("forest.ser");
+        manager.setForest(forest);
+        System.out.println("Game Loaded!💾");
     }
 }

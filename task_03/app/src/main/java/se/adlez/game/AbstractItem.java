@@ -1,6 +1,8 @@
 package se.adlez.game;
 
-public class AbstractItem implements Item {
+import java.io.Serializable;
+
+public class AbstractItem implements Item, Serializable{
     private String description;
     private String graphic;
 

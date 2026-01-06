@@ -34,6 +34,7 @@ public class PlayGame extends MenuItem {
                     break;
             }
             if(forest.isGameOver() == true){
+                System.out.println(forest.getGamePlan());
                 break;
             }
         }

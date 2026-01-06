@@ -96,7 +96,7 @@ public class Forest implements Serializable{
                 items.remove(player.getPosition());
                 this.player = new Robot(new Position(x, y));
                 addItem(player, new Position(x, y));
-                this.status.append("You move swiftly!\n");
+                this.status.append("You move swiftly!👣\n");
             }
             else if(item == home){
                 items.remove(player.getPosition());

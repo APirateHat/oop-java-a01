@@ -1,1 +1,48 @@
-null
+{
+  "WIDTH": 10,
+  "HEIGHT": 10,
+  "items": {
+    "(6, 7)": {
+      "description": "Rock",
+      "graphic": "🪨"
+    },
+    "(1, 6)": {
+      "description": "Rock",
+      "graphic": "🪨"
+    },
+    "(0, 6)": {
+      "description": "Fir Tree",
+      "graphic": "🌲"
+    },
+    "(3, 9)": {
+      "description": "Rock",
+      "graphic": "🪨"
+    },
+    "(8, 0)": {
+      "description": "Fir Tree",
+      "graphic": "🌲"
+    },
+    "(0, 8)": {
+      "description": "Fir Tree",
+      "graphic": "🌲"
+    },
+    "(7, 0)": {
+      "description": "Rock",
+      "graphic": "🪨"
+    },
+    "(8, 4)": {
+      "description": "Fir Tree",
+      "graphic": "🌲"
+    },
+    "(5, 2)": {
+      "description": "Rock",
+      "graphic": "🪨"
+    },
+    "(3, 2)": {
+      "description": "Fir Tree",
+      "graphic": "🌲"
+    }
+  },
+  "gameOver": false,
+  "status": ""
+}

@@ -93,11 +93,11 @@ public class RockPaperScissor {
         }
         else if (avatarMove == Move.SCISSOR && playerMove == Move.ROCK){
             playerScore += 1;
-            System.out.println(combinedString + " You win by finding the strongest diamond scissors that cuts rock!");
+            System.out.println(combinedString + " You win by smashing the puny sciccors with a giant rock!");
         }
         else if (playerMove == Move.SCISSOR && avatarMove == Move.ROCK){
             avatarScore += 1;
-            System.out.println(combinedString + avatarName + " wins merely with his strong grip and regular scissors.");
+            System.out.println(combinedString + avatarName + " wins merely with his strength and a small pebble");
         }
     }
 
